@@ -17,8 +17,8 @@
   },
   "message": "The following service(s) have been created in your project: ${NAME}, ${DATABASE_SERVICE_NAME}.\n\nFor more information about using this template, including OpenShift considerations, see https://github.com/sclorg/nodejs-ex/blob/master/README.md.",
   "labels": {
-      "template": "nodejs-mongodb-example",
-      "app": "nodejs-mongodb-example"
+    "template": "nodejs-mongodb-example",
+    "app": "nodejs-mongodb-example"
   },
   "objects": [
     {
@@ -30,7 +30,7 @@
       "stringData": {
         "database-user": "${DATABASE_USER}",
         "database-password": "${DATABASE_PASSWORD}",
-        "database-admin-password" : "${DATABASE_ADMIN_PASSWORD}"
+        "database-admin-password": "${DATABASE_ADMIN_PASSWORD}"
       }
     },
     {
@@ -105,7 +105,7 @@
             "from": {
               "kind": "ImageStreamTag",
               "namespace": "${NAMESPACE}",
-              "name": "nodejs:${NODEJS_VERSION}"
+              "name": "node:${NODEJS_VERSION}"
             },
             "env": [
               {
@@ -207,18 +207,18 @@
                   {
                     "name": "MONGODB_USER",
                     "valueFrom": {
-                      "secretKeyRef" : {
-                        "name" : "${NAME}",
-                        "key" : "database-user"
+                      "secretKeyRef": {
+                        "name": "${NAME}",
+                        "key": "database-user"
                       }
                     }
                   },
                   {
                     "name": "MONGODB_PASSWORD",
                     "valueFrom": {
-                      "secretKeyRef" : {
-                        "name" : "${NAME}",
-                        "key" : "database-password"
+                      "secretKeyRef": {
+                        "name": "${NAME}",
+                        "key": "database-password"
                       }
                     }
                   },
@@ -229,9 +229,9 @@
                   {
                     "name": "MONGODB_ADMIN_PASSWORD",
                     "valueFrom": {
-                      "secretKeyRef" : {
-                        "name" : "${NAME}",
-                        "key" : "database-admin-password"
+                      "secretKeyRef": {
+                        "name": "${NAME}",
+                        "key": "database-admin-password"
                       }
                     }
                   }
@@ -343,18 +343,18 @@
                   {
                     "name": "MONGODB_USER",
                     "valueFrom": {
-                      "secretKeyRef" : {
-                        "name" : "${NAME}",
-                        "key" : "database-user"
+                      "secretKeyRef": {
+                        "name": "${NAME}",
+                        "key": "database-user"
                       }
                     }
                   },
                   {
                     "name": "MONGODB_PASSWORD",
                     "valueFrom": {
-                      "secretKeyRef" : {
-                        "name" : "${NAME}",
-                        "key" : "database-password"
+                      "secretKeyRef": {
+                        "name": "${NAME}",
+                        "key": "database-password"
                       }
                     }
                   },
@@ -365,9 +365,9 @@
                   {
                     "name": "MONGODB_ADMIN_PASSWORD",
                     "valueFrom": {
-                      "secretKeyRef" : {
-                        "name" : "${NAME}",
-                        "key" : "database-admin-password"
+                      "secretKeyRef": {
+                        "name": "${NAME}",
+                        "key": "database-admin-password"
                       }
                     }
                   }
@@ -436,7 +436,7 @@
       "name": "NODEJS_VERSION",
       "displayName": "Version of NodeJS Image",
       "description": "Version of NodeJS image to be used (10, 12, or latest).",
-      "value": "12",
+      "value": "latest",
       "required": true
     },
     {
